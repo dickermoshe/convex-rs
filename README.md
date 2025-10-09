@@ -1,3 +1,7 @@
+Fork of the official convex-rs client to add support for Flutter Rust Bridge bindings.
+
+---
+
 # Convex
 
 The official Rust client for [Convex](https://convex.dev/).

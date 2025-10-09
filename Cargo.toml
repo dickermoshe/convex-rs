@@ -1,7 +1,7 @@
 [package]
 name = "convex"
 description = "Client library for Convex (convex.dev)"
-authors = [ "Convex, Inc. <no-reply@convex.dev>" ]
+authors = ["Convex, Inc. <no-reply@convex.dev>"]
 version = "0.10.1"
 edition = "2021"
 rust-version = "1.80.1"
@@ -11,12 +11,17 @@ repository = "https://github.com/get-convex/convex-rs"
 homepage = "https://www.convex.dev/"
 
 [features]
-default = [ "native-tls-vendored" ]
-native-tls = [ "tokio-tungstenite/native-tls" ]
-native-tls-vendored = [ "tokio-tungstenite/native-tls-vendored" ]
-rustls-tls-native-roots = [ "tokio-tungstenite/rustls-tls-native-roots" ]
-rustls-tls-webpki-roots = [ "tokio-tungstenite/rustls-tls-webpki-roots" ]
-testing = [ "convex_sync_types/testing", "proptest", "proptest-derive", "parking_lot" ]
+default = ["native-tls-vendored"]
+native-tls = ["tokio-tungstenite/native-tls"]
+native-tls-vendored = ["tokio-tungstenite/native-tls-vendored"]
+rustls-tls-native-roots = ["tokio-tungstenite/rustls-tls-native-roots"]
+rustls-tls-webpki-roots = ["tokio-tungstenite/rustls-tls-webpki-roots"]
+testing = [
+    "convex_sync_types/testing",
+    "proptest",
+    "proptest-derive",
+    "parking_lot",
+]
 
 [dependencies]
 anyhow = { version = "1" }
@@ -26,32 +31,50 @@ bytes = { version = "1.6.0" }
 convex_sync_types = { path = "./sync_types", version = "=0.10.0" }
 futures = { version = "0.3" }
 imbl = { version = "5.0.0" }
-parking_lot = { optional = true, version = "0.12", features = [ "hardware-lock-elision" ] }
+parking_lot = { optional = true, version = "0.12", features = [
+    "hardware-lock-elision",
+] }
 proptest = { optional = true, version = "1" }
 proptest-derive = { optional = true, version = "0.5.0" }
 rand = { version = "0.9" }
-serde_json = { features = [ "float_roundtrip", "preserve_order", "raw_value" ], version = "1" }
+serde_json = { features = [
+    "float_roundtrip",
+    "preserve_order",
+    "raw_value",
+], version = "1" }
 thiserror = { version = "2" }
-tokio = { features = [ "full" ], version = "1.47.1" }
-tokio-stream = { features = [ "io-util", "sync" ], version = "0.1" }
-tokio-tungstenite = { features = [ "url" ], version = "0.26.2" }
+tokio = { features = ["full"], version = "1.47.1" }
+tokio-stream = { features = ["io-util", "sync"], version = "0.1" }
+tokio-tungstenite = { features = ["url"], version = "0.26.2" }
 tracing = { version = "0.1" }
 url = { version = "2.5.4" }
-uuid = { features = [ "serde", "v4" ], version = "1.6" }
+uuid = { features = ["serde", "v4"], version = "1.6" }
+
+# Added for Flutter Rust Bridge bindings
+flutter_rust_bridge = "=2.11.1"
+android_logger = { version = "0.14.1" }
+log = { version = "0.4.21" }
+once_cell = { version = "1.19.0" }
+async-once-cell = { version = "0.5.3" }
+ordered-float = "5.0.0"
+
 
 [dev-dependencies]
 colored = { version = "3" }
-convex_sync_types = { path = "./sync_types", version = "=0.10.0", features = [ "testing" ] }
+convex_sync_types = { path = "./sync_types", version = "=0.10.0", features = [
+    "testing",
+] }
 dotenvy = { version = "0.15.7" }
 maplit = { version = "1" }
-parking_lot = { version = "0.12", features = [ "hardware-lock-elision" ] }
+parking_lot = { version = "0.12", features = ["hardware-lock-elision"] }
 pretty_assertions = { version = "1" }
 proptest = { version = "1" }
 proptest-derive = { version = "0.5.0" }
-tracing-subscriber = { features = [ "env-filter" ], version = "0.3.17" }
+tracing-subscriber = { features = ["env-filter"], version = "0.3.17" }
 
 [lints.rust]
 unused_extern_crates = "warn"
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(frb_expand)'] }
 
 [lints.clippy]
 await_holding_lock = "warn"

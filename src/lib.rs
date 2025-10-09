@@ -19,11 +19,11 @@
 //! #[tokio::main]
 //! async fn main() -> anyhow::Result<()> {
 //!     let mut client = ConvexClient::new("https://cool-music-123.convex.cloud").await?;
-//!     client.mutation("sendMessage", maplit::btreemap!{
+//!     client.mutation("sendMessage", maplit::HashMap!{
 //!         "body".into() => "Let it be.".into(),
 //!         "author".into() => "The Beatles".into(),
 //!     }).await?;
-//!     let mut sub = client.subscribe("listMessages", maplit::btreemap!{}).await?;
+//!     let mut sub = client.subscribe("listMessages", maplit::HashMap!{}).await?;
 //!     while let Some(result) = sub.next().await {
 //!         println!("{result:?}");
 //!     }
@@ -68,4 +68,9 @@ pub use base_client::{
     SubscriberId,
 };
 
+/// Dart/Flutter client integration for mobile applications.
+///
+/// Provides Flutter Rust Bridge (FRB) compatible interfaces for mobile
+/// Convex clients, enabling async operations without blocking main threads.
+pub mod dart_client;
 mod sync;
