@@ -10,7 +10,7 @@ use thiserror::Error;
 /// They correspond to the [supported Convex types](https://docs.convex.dev/database/types).
 #[derive(Clone, Debug)]
 #[allow(missing_docs)]
-#[frb]
+#[frb(non_opaque)]
 pub enum Value {
     Null,
     Int64(i64),

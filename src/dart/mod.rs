@@ -36,7 +36,7 @@ use crate::{
 // Instead of serializing ConvexError into a string, we directly pass the
 // DartConvexError to Dart.
 #[derive(Debug, thiserror::Error)]
-#[frb]
+#[frb(non_opaque)]
 pub enum ClientError {
     /// An internal error within the mobile Convex client.
     #[error("InternalError: {msg}")]
