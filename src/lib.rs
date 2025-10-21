@@ -68,4 +68,5 @@ pub use base_client::{
     SubscriberId,
 };
 
+pub mod dart;
 mod sync;
