@@ -1,5 +1,5 @@
 [package]
-name = "convex"
+name = "convex_dart"
 description = "Client library for Convex (convex.dev)"
 authors = ["Convex, Inc. <no-reply@convex.dev>"]
 version = "0.10.1"
