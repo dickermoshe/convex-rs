@@ -10,6 +10,9 @@ license = "Apache-2.0"
 repository = "https://github.com/get-convex/convex-rs"
 homepage = "https://www.convex.dev/"
 
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
 [features]
 # Modified to use rustls-tls-native-roots instead of native-tls-vendored
 # The descion to use this is not identical to the one in [convex-mobile]
