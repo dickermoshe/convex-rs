@@ -46,7 +46,7 @@ use request_manager::{
     RequestId,
     RequestManager,
 };
-mod query_result;
+pub mod query_result;
 pub use query_result::{
     FunctionResult,
     QueryResults,
