@@ -1,3 +1,4 @@
+use flutter_rust_bridge::frb;
 use serde_json::{
     json,
     Value as JsonValue,
@@ -30,6 +31,7 @@ impl Value {
     /// assert_eq!(JsonValue::from(value.clone()), json!({ "$bytes": "ABCD" }));
     /// assert_eq!(value.export(), json!("ABCD"));
     /// ```
+    #[frb(ignore)]
     pub fn export(self) -> JsonValue {
         match self {
             Value::Null => JsonValue::Null,
