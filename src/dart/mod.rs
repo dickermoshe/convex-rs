@@ -1,7 +1,7 @@
 //! A slightly modified version of the https://github.com/get-convex/convex-mobile repository 
 //! for better dart support.
 use std::{
-    collections::BTreeMap,
+    collections::{BTreeMap, HashMap},
     sync::Arc,
 };
 
@@ -325,3 +325,14 @@ fn handle_direct_function_result(result: FunctionResult) -> Result<Value, Client
     }
 }
 
+
+// flutter_rust_bridge does not support BTreeMap, so we use these functions to convert the types.
+#[frb(sync)]
+pub fn hashmap_to_btreemap(hashmap: HashMap<String, Value>) -> BTreeMap<String, Value> {
+    hashmap.into_iter().map(|(k, v)| (k, v)).collect()
+}
+
+#[frb(sync)]
+pub fn btreemap_to_hashmap(btreemap: BTreeMap<String, Value>) -> HashMap<String, Value> {
+    btreemap.into_iter().map(|(k, v)| (k, v)).collect()
+}
