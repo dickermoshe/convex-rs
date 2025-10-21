@@ -1,5 +1,5 @@
 Fork of the official convex-rs client to add support for Flutter Rust Bridge bindings.
-All work is done on the [`convex-dart`](https://github.com/dickermoshe/convex-rs/tree/convex-dart) branch.
+All work is done on the `dart-<version>` branches
 
 ---
 
