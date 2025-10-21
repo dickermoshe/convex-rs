@@ -6,13 +6,13 @@ pub struct JsonInteger {}
 
 impl JsonInteger {
     /// Encode an integer as a string.
-    #[frb(sync)]
+    #[frb(ignore)]
     pub fn encode(n: i64) -> String {
         base64::encode(n.to_le_bytes())
     }
 
     /// Decode an integer from a string.
-    #[frb(sync)]
+    #[frb(ignore)]
     pub fn decode(s: String) -> anyhow::Result<i64> {
         let bytes: [u8; 8] = base64::decode(s.as_bytes())?
             .try_into()
