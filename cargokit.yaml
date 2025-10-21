@@ -1,0 +1,3 @@
+precompiled_binaries:
+  url_prefix: https://github.com/dickermoshe/convex-dart/releases/download/precompiled_
+  public_key: 5fc084e96bfd26d735e00d9be68bce04efca585ada7a8902e2e19cf5fb6c1026
