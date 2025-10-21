@@ -3,12 +3,14 @@ use std::collections::BTreeMap;
 pub mod export;
 mod json;
 mod sorting;
+use flutter_rust_bridge::frb;
 use thiserror::Error;
 
 /// A value that can be passed as an argument or returned from Convex functions.
 /// They correspond to the [supported Convex types](https://docs.convex.dev/database/types).
 #[derive(Clone, Debug)]
 #[allow(missing_docs)]
+#[frb]
 pub enum Value {
     Null,
     Int64(i64),
