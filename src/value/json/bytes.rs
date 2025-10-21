@@ -1,7 +1,7 @@
 use flutter_rust_bridge::frb;
 
 /// Helper functions for encoding `Bytes`s as `String`s.
-pub enum JsonBytes {}
+pub struct JsonBytes {}
 
 impl JsonBytes {
     /// Encode a binary string as a string.
