@@ -67,7 +67,7 @@ impl From<anyhow::Error> for ClientError {
 }
 
 /// Trait defining the interface for handling subscription updates.
-trait QuerySubscriber: Send + Sync {
+pub trait QuerySubscriber: Send + Sync {
     // Due to restrictions on flutter_rust_bridge, we have made this function async
     // We've also unified on_error and on_update into a single callback
     /// Called when a new update is received
@@ -75,17 +75,19 @@ trait QuerySubscriber: Send + Sync {
 }
 
 /// Adapter for Dart functions as subscribers, handling async callbacks.
-struct DartQuerySubscriber {
+pub struct DartQuerySubscriber {
     on_update: Box<dyn Fn(FunctionResult) -> DartFnFuture<anyhow::Result<()>> + Send + Sync>,
 }
 
 impl DartQuerySubscriber {
-    fn new(
+    #[frb(sync)]
+    pub fn new(
         on_update: Box<dyn Fn(FunctionResult) -> DartFnFuture<anyhow::Result<()>> + Send + Sync>,
     ) -> Self {
         DartQuerySubscriber { on_update }
     }
 }
+
 
 impl QuerySubscriber for DartQuerySubscriber {
     async fn on_update(&self, value: FunctionResult) {

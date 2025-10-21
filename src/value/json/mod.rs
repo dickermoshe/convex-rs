@@ -5,6 +5,7 @@ use std::{
 };
 
 use anyhow::Context;
+/// flutter_rust_bridge:ignore
 use serde_json::{
     json,
     Value as JsonValue,

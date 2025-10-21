@@ -1,6 +1,7 @@
 use std::collections::BTreeMap;
 
 pub mod export;
+/// flutter_rust_bridge:ignore
 mod json;
 mod sorting;
 use flutter_rust_bridge::frb;
