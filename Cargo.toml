@@ -14,7 +14,7 @@ homepage = "https://www.convex.dev/"
 crate-type = ["cdylib", "staticlib"]
 
 [features]
-default = ["rustls-tls-native-roots"]
+default = ["rustls-tls-webpki-roots"]
 native-tls = ["tokio-tungstenite/native-tls"]
 native-tls-vendored = ["tokio-tungstenite/native-tls-vendored"]
 rustls-tls-native-roots = ["tokio-tungstenite/rustls-tls-native-roots"]
