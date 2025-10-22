@@ -14,10 +14,6 @@ homepage = "https://www.convex.dev/"
 crate-type = ["cdylib", "staticlib"]
 
 [features]
-# Modified to use rustls-tls-native-roots instead of native-tls-vendored
-# The descion to use this is not identical to the one in [convex-mobile]
-# This default is the easiest way to build a cross-platform which respects the platforms 
-# certificate store. In the future we may want to use native-tls to limit the library size.
 default = ["rustls-tls-native-roots"]
 native-tls = ["tokio-tungstenite/native-tls"]
 native-tls-vendored = ["tokio-tungstenite/native-tls-vendored"]
@@ -48,7 +44,7 @@ serde_json = { features = ["float_roundtrip", "preserve_order"], version = "1" }
 thiserror = { version = "2" }
 tokio = { features = ["full"], version = "1" }
 tokio-stream = { features = ["io-util", "sync"], version = "0.1" }
-tokio-tungstenite = { features = ["url"], version = "0.26.2" }
+tokio-tungstenite = { features = ["url", "rustls"], version = "0.26.2" }
 tracing = { version = "0.1" }
 url = { version = "2.5.4" }
 uuid = { features = ["serde", "v4"], version = "1.6" }
@@ -60,6 +56,11 @@ once_cell = { version = "1.19.0" }
 async-once-cell = { version = "0.5.3" }
 ordered-float = "5.0.0"
 parking_lot = { version = "0.12.3", features = ["hardware-lock-elision"] }
+rustls = { version = "0.23", default-features = false, features = [
+    "ring",
+    "std",
+    "tls12",
+] }
 
 [dev-dependencies]
 colored = { version = "3" }

@@ -261,6 +261,7 @@ dependencies = [
  "proptest",
  "proptest-derive",
  "rand 0.9.0",
+ "rustls",
  "serde_json",
  "thiserror",
  "tokio",
@@ -1489,6 +1490,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "47796c98c480fce5406ef69d1c76378375492c3b0a0de587be0c1d9feb12f395"
 dependencies = [
  "once_cell",
+ "ring",
  "rustls-pki-types",
  "rustls-webpki",
  "subtle",
