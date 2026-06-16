@@ -440,8 +440,8 @@ impl OptimisticQueryResults {
 /// To watch for consistent changes in query values, you can add the following
 /// code to the background thread:
 /// ```no_run
-/// use convex::base_client::BaseConvexClient;
-/// use convex::Value;
+/// use convex_dart::base_client::BaseConvexClient;
+/// use convex_dart::Value;
 /// use convex_sync_types::ServerMessage;
 ///
 /// fn on_receive_server_message(mut base_client: BaseConvexClient, msg: ServerMessage<Value>) {

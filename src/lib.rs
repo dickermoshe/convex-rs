@@ -13,7 +13,7 @@
 //! mutations. To make a new project, check out our [getting started guide](https://docs.convex.dev/get-started).
 //!
 //! ```no_run
-//! use convex::ConvexClient;
+//! use convex_dart::ConvexClient;
 //! use futures::StreamExt;
 //!
 //! #[tokio::main]

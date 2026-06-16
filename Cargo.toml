@@ -11,7 +11,7 @@ repository = "https://github.com/get-convex/convex-rs"
 homepage = "https://www.convex.dev/"
 
 [lib]
-crate-type = ["cdylib", "staticlib"]
+crate-type = ["rlib", "cdylib", "staticlib"]
 
 [features]
 default = ["rustls-tls-webpki-roots"]

@@ -67,7 +67,7 @@ const VERSION: Option<&str> = option_env!("CARGO_PKG_VERSION");
 /// which can be found in the [dashboard](https://dashboard.convex.dev/) settings tab.
 ///
 /// ```no_run
-/// use convex::ConvexClient;
+/// use convex_dart::ConvexClient;
 /// use futures::StreamExt;
 ///
 /// #[tokio::main]
@@ -124,7 +124,7 @@ impl ConvexClient {
     /// Constructs a new client for communicating with `deployment_url`.
     ///
     /// ```no_run
-    /// # use convex::ConvexClient;
+    /// # use convex_dart::ConvexClient;
     /// # #[tokio::main]
     /// # async fn main() -> anyhow::Result<()> {
     /// let client = ConvexClient::new("https://cool-music-123.convex.cloud").await?;
@@ -183,7 +183,7 @@ impl ConvexClient {
     /// The subscription is automatically unsubscribed when it is dropped.
     ///
     /// ```no_run
-    /// # use convex::ConvexClient;
+    /// # use convex_dart::ConvexClient;
     /// # use futures::StreamExt;
     /// # #[tokio::main]
     /// # async fn main() -> anyhow::Result<()> {
@@ -224,7 +224,7 @@ impl ConvexClient {
     /// args).await?.next().unwrap()`
     ///
     /// ```no_run
-    /// # use convex::ConvexClient;
+    /// # use convex_dart::ConvexClient;
     /// # use futures::StreamExt;
     /// # #[tokio::main]
     /// # async fn main() -> anyhow::Result<()> {
@@ -250,7 +250,7 @@ impl ConvexClient {
     /// containing the return value of the mutation once it completes.
     ///
     /// ```no_run
-    /// # use convex::ConvexClient;
+    /// # use convex_dart::ConvexClient;
     /// # use futures::StreamExt;
     /// # #[tokio::main]
     /// # async fn main() -> anyhow::Result<()> {
@@ -283,7 +283,7 @@ impl ConvexClient {
     /// containing the return value of the action once it completes.
     ///
     /// ```no_run
-    /// # use convex::ConvexClient;
+    /// # use convex_dart::ConvexClient;
     /// # use futures::StreamExt;
     /// # #[tokio::main]
     /// # async fn main() -> anyhow::Result<()> {
@@ -328,7 +328,7 @@ impl ConvexClient {
     /// its latest result [`Value`].
     ///
     /// ```no_run
-    /// # use convex::ConvexClient;
+    /// # use convex_dart::ConvexClient;
     /// # use futures::StreamExt;
     /// # #[tokio::main]
     /// # async fn main() -> anyhow::Result<()> {
@@ -459,7 +459,7 @@ impl ConvexClientBuilder {
     /// Build the [`ConvexClient`] with the configured options.
     ///
     /// ```no_run
-    /// # use convex::ConvexClientBuilder;
+    /// # use convex_dart::ConvexClientBuilder;
     /// # #[tokio::main]
     /// # async fn main() -> anyhow::Result<()> {
     /// let client = ConvexClientBuilder::new("https://cool-music-123.convex.cloud").build().await?;

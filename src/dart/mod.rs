@@ -1,8 +1,7 @@
 //! A slightly modified version of the https://github.com/get-convex/convex-mobile repository 
 //! for better dart support.
 use std::{
-    collections::{BTreeMap, HashMap},
-    sync::Arc,
+    collections::{BTreeMap, HashMap}, future::Future, sync::Arc
 };
 
 
@@ -71,7 +70,7 @@ pub trait QuerySubscriber: Send + Sync {
     // Due to restrictions on flutter_rust_bridge, we have made this function async
     // We've also unified on_error and on_update into a single callback
     /// Called when a new update is received
-    async fn on_update(&self, value: FunctionResult);
+    fn on_update(&self, value: FunctionResult) -> impl Future<Output = ()> ;
 }
 
 /// Adapter for Dart functions as subscribers, handling async callbacks.
