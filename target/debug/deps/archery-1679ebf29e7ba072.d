@@ -1,0 +1,9 @@
+C:\Users\Moshe\DickerSystems\convex-dart-new\convex-rs\target\debug\deps\archery-1679ebf29e7ba072.d: C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\lib.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\mod.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\mod.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\arc\mod.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\rc\mod.rs
+
+C:\Users\Moshe\DickerSystems\convex-dart-new\convex-rs\target\debug\deps\libarchery-1679ebf29e7ba072.rmeta: C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\lib.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\mod.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\mod.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\arc\mod.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\rc\mod.rs
+
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\lib.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\mod.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\mod.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\arc\mod.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\archery-1.2.1\src\shared_pointer\kind\rc\mod.rs:

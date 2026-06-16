@@ -1,0 +1,11 @@
+C:\Users\Moshe\DickerSystems\convex-dart-new\convex-rs\target\debug\deps\convert_case-f329a15b4e826772.d: C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\lib.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\boundary.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\case.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\converter.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\pattern.rs
+
+C:\Users\Moshe\DickerSystems\convex-dart-new\convex-rs\target\debug\deps\libconvert_case-f329a15b4e826772.rlib: C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\lib.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\boundary.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\case.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\converter.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\pattern.rs
+
+C:\Users\Moshe\DickerSystems\convex-dart-new\convex-rs\target\debug\deps\libconvert_case-f329a15b4e826772.rmeta: C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\lib.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\boundary.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\case.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\converter.rs C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\pattern.rs
+
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\lib.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\boundary.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\case.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\converter.rs:
+C:\Users\Moshe\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.7.1\src\pattern.rs:
