@@ -1,6 +1,10 @@
 use std::{
     collections::BTreeMap,
     fmt::Display,
+    hash::{
+        Hash,
+        Hasher,
+    },
     ops::Deref,
 };
 
@@ -27,6 +31,8 @@ use crate::{
     Timestamp,
     UdfPath,
 };
+
+mod json;
 
 #[derive(
     Copy, Clone, Debug, Default, Eq, PartialEq, PartialOrd, Ord, Serialize, Deserialize, Hash,
@@ -107,7 +113,7 @@ pub struct SerializedArgs(
         any(test, feature = "testing"),
         proptest(strategy = "json_raw_args_strategy()")
     )]
-    pub Box<RawValue>,
+    Box<RawValue>,
 );
 
 impl PartialEq for SerializedArgs {
@@ -117,8 +123,18 @@ impl PartialEq for SerializedArgs {
 }
 
 impl Eq for SerializedArgs {}
+impl Hash for SerializedArgs {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.0.get().hash(state);
+    }
+}
 
 impl SerializedArgs {
+    /// `value` should be a valid serialized `ConvexArray`; this is unchecked
+    pub fn from_raw(value: Box<RawValue>) -> Self {
+        Self(value)
+    }
+
     pub fn from_args(value: Vec<JsonValue>) -> Result<Self, serde_json::Error> {
         let raw_value = serde_json::value::to_raw_value(&value)?;
         Ok(Self(raw_value))
@@ -126,6 +142,18 @@ impl SerializedArgs {
 
     pub fn from_slice(value: &[u8]) -> Result<Self, serde_json::Error> {
         Ok(Self(serde_json::from_slice(value)?))
+    }
+
+    pub fn heap_size(&self) -> usize {
+        self.0.get().len()
+    }
+
+    pub fn get(&self) -> &str {
+        self.0.get()
+    }
+
+    pub fn into_bytes(self) -> Vec<u8> {
+        <Box<str>>::from(self.0).into_boxed_bytes().into_vec()
     }
 }
 
@@ -374,9 +402,7 @@ pub enum ServerMessage<V: 'static> {
 impl<V: 'static> ServerMessage<V> {
     pub fn inject_server_ts(&mut self, ts: Timestamp) {
         match self {
-            Self::Transition {
-                ref mut server_ts, ..
-            } => *server_ts = Some(ts),
+            Self::Transition { server_ts, .. } => *server_ts = Some(ts),
             _ => {},
         }
     }

@@ -58,14 +58,18 @@ pub use client::{
     ConvexClient,
     ConvexClientBuilder,
 };
+#[cfg(any(test, feature = "testing"))]
+pub use sync::testing;
 pub use sync::WebSocketState;
 
 pub mod base_client;
 #[doc(inline)]
 pub use base_client::{
+    AuthTokenFetcher,
     FunctionResult,
     QueryResults,
     SubscriberId,
 };
+pub use convex_sync_types::AuthenticationToken;
 
 mod sync;
