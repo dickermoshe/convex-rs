@@ -12,6 +12,7 @@ use derive_more::{
     Deref,
     FromStr,
 };
+use flutter_rust_bridge::frb;
 #[cfg(any(test, feature = "testing"))]
 use proptest::prelude::*;
 use serde::{
@@ -212,6 +213,7 @@ pub struct ClientEvent {
 
 #[derive(Clone, Debug, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[cfg_attr(any(test, feature = "testing"), derive(proptest_derive::Arbitrary))]
+#[frb(non_opaque)]
 #[serde(transparent)]
 pub struct UserIdentifier(pub String);
 impl UserIdentifier {
@@ -233,6 +235,7 @@ impl Deref for UserIdentifier {
 // to require them.
 #[derive(Clone, Debug, PartialEq, Eq, Hash)]
 #[cfg_attr(any(test, feature = "testing"), derive(proptest_derive::Arbitrary))]
+#[frb(non_opaque)]
 pub struct UserIdentityAttributes {
     pub token_identifier: UserIdentifier,
     pub issuer: Option<String>,
@@ -295,6 +298,7 @@ impl Default for UserIdentityAttributes {
 
 #[derive(Clone, Debug, Eq, PartialEq, Default)]
 #[cfg_attr(any(test, feature = "testing"), derive(proptest_derive::Arbitrary))]
+#[frb(non_opaque)]
 pub enum AuthenticationToken {
     /// Admin key issued by a KeyBroker, potentially acting as a user.
     Admin(String, Option<UserIdentityAttributes>),
